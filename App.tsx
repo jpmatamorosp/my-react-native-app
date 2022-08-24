@@ -17,36 +17,50 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TextInput,
   useColorScheme,
+  Pressable,
   View,
 } from 'react-native';
-import Header from './components/Header';
 import { HeaderItem } from './interfaces/index';
 import 'react-native-get-random-values';
 import { v4 as uuid } from 'uuid';
 import ListItem from './components/ListItem';
+import OrderEntryComponent from './components/GoalInput';
+import GoalInput from './components/GoalInput';
 
 const App = () => {
-  const [items, setItems] = useState<HeaderItem[]>([
-    { id: uuid(), text: "First"},
-    { id: uuid(), text: "Second" },
-    { id: uuid(), text: "Third" }
-  ]);
+  const [items, setItems] = useState<HeaderItem[]>([]);
+  const [isAddOpen,setAddOpen] = useState(false);
+
+  const addGoalHandler = (enteredGoal: string) => {
+    setItems( (currentGoal) => [...currentGoal, { id: uuid(), text: enteredGoal }]);
+    setAddOpen(false);
+  }
+
+  const deleteGoalHandler = (id: string) => {
+    setItems( currentGoal => currentGoal.filter( g => g.id !== id));
+  }
+
+  const onCancel = () => {
+    setAddOpen(false);
+  }
+
   return (
     <View style={styles.container}>
-      <Header title="Shopping"/>
+      <Button title='Add new Goal' onPress={() => setAddOpen(true)}/>
+      <GoalInput isOpen={isAddOpen} onAddGoal={addGoalHandler} onCancel={onCancel}/>
       <FlatList
-        data={items}
-        renderItem={ (item) => <ListItem item={item.item}/>}
-      />
+          data={items}
+          renderItem={ ({ item }) => <ListItem onDeleteGoal={deleteGoalHandler} item={item}/>}
+        />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    padding: 50
   },
 });
 

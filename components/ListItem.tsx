@@ -6,11 +6,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 type props = {
     item: HeaderItem;
+    onDeleteGoal: (id: string) => void;
 }
-const ListItem: FC<props> = ({item: {text}}) => {
+const ListItem: FC<props> = ({item: {id, text}, onDeleteGoal}) => {
 
     return (
-        <TouchableOpacity style={styles.listItem}>
+        <TouchableOpacity style={styles.listItem} onPress={onDeleteGoal.bind(this, id)}>
             <View style={styles.listItemView}>
                 <Text style={styles.listItemText}>{text}</Text>
                 <Icon name="remove" size={20} color="firebrick" />
@@ -21,9 +22,10 @@ const ListItem: FC<props> = ({item: {text}}) => {
 
 const styles = StyleSheet.create({
     listItem: {
-        padding: 15,
+        padding: 10,
+        marginVertical: 5,
         backgroundColor: "#f8f8f8",
-        borderBottomWidth: 1,
+        borderWidth: 1,
         borderColor: "#eee"
     },
     listItemView: {
@@ -32,7 +34,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     listItemText: {
-        fontSize: 18,
+        fontSize: 15,
     }
 });
 
