@@ -9,11 +9,11 @@
  */
 
 import React from 'react';
-import GoalView from './src/views/GoalView';
+import GoalScreen from './src/screens/GoalScreen';
 
 const App = () => {
   return (
-    <GoalView />
+    <GoalScreen />
   );
 };
 

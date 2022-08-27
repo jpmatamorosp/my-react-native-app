@@ -11,7 +11,7 @@ import { v4 as uuid } from 'uuid';
 import ListItem from '../components/ListItem';
 import GoalInput from '../components/GoalInput';
 
-const GoalView = () => {
+const GoalScreen = () => {
   const [items, setItems] = useState<HeaderItem[]>([]);
   const [isAddOpen,setAddOpen] = useState(false);
 
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GoalView;
+export default GoalScreen;
