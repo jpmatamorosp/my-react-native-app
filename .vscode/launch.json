@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "Debug Android",
             "cwd": "${workspaceFolder}",
@@ -18,6 +19,12 @@
             "request": "launch",
             "platform": "android",
             "enableDebug": false
+        },
+        {
+            "name": "Attach to packager",
+            "cwd": "${workspaceFolder}",
+            "type": "reactnative",
+            "request": "attach"
         }
     ]
 }
