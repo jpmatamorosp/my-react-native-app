@@ -1,7 +1,5 @@
 import React, { FC, useState, type PropsWithChildren } from 'react';
 import { View, StyleSheet, TextInput, Button, Modal } from 'react-native';
-import { OrderEntry } from '../interfaces/index';
-import Header from './Header';
 
 type props = {
     onAddGoal: (enteredGoal: string) => void,
@@ -53,7 +51,8 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         padding: 10,
-        marginBottom: 10
+        marginBottom: 10,
+        borderRadius: 4
       },
       butttonContainer: {
         flexDirection: 'row',
@@ -61,7 +60,7 @@ const styles = StyleSheet.create({
         width: '60%'
       },
       button: {
-        width: '40%'
+        width: '40%',
       }
 });
 
