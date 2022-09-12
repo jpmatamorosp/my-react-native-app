@@ -53,7 +53,7 @@ export function SignIn() {
     }
   
     function handleNewAccount() {
-      navigation.navigate('SignUpFirstStep');
+      navigation.navigate('Goal');
     }
   
     return (
