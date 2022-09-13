@@ -1,12 +1,19 @@
 import React from 'react';
-import { View, Text, StyleSheet, useWindowDimensions, ToastAndroid, Pressable } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  useWindowDimensions,
+  ToastAndroid,
+  Pressable,
+} from 'react-native';
 
 //const windowsHeight = Dimensions.get('window').height;
-const FlexScreen = () => {
+const Flex = () => {
   const showToast = () => {
-    ToastAndroid.show("Toast message!", ToastAndroid.SHORT);
-  }
-  const { height, width } = useWindowDimensions();
+    ToastAndroid.show('Toast message!', ToastAndroid.SHORT);
+  };
+  const {height, width} = useWindowDimensions();
   return (
     <View style={{...styles.container, height}}>
       <Pressable style={styles.firstChild} onPress={showToast}>
@@ -30,7 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     //width: '10%',
-    height: '100%'
+    height: '100%',
   },
   firstChild: {
     flex: 1,
@@ -40,7 +47,6 @@ const styles = StyleSheet.create({
     height: 100,
     justifyContent: 'center',
     alignItems: 'center',
-    
   },
   secondChild: {
     flex: 1,
@@ -58,13 +64,13 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: 'yellow',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   text: {
     color: 'white',
     fontSize: 15,
     fontWeight: 'bold',
-  }
+  },
 });
 
-export default FlexScreen;
+export default Flex;

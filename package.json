@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nozbe/watermelondb": "^0.24.0",
+    "@react-navigation/bottom-tabs": "^6.3.3",
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/stack": "^6.2.3",
     "@types/uuid": "^8.3.4",
@@ -24,7 +25,8 @@
     "react-native-screens": "^3.17.0",
     "react-native-svg": "^13.1.0",
     "react-native-vector-icons": "^9.2.0",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

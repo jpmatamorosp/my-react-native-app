@@ -1,27 +1,21 @@
 import React from 'react';
-import { createStackNavigator } from "@react-navigation/stack";
-import FlexScreen from "../screens/FlexScreen";
-import { SplashScreen } from '../screens/SplashScreen';
-import GoalScreen from './../screens/GoalScreen';
+import {createStackNavigator} from '@react-navigation/stack';
+import {useAuth} from '../hooks/auth';
+import {AppTabRoutes} from './app.tab.routes';
+import {AuthRoutes} from './auth.routes';
+import {SignIn} from '../screens/SignIn';
 
-const { Navigator, Screen } = createStackNavigator();
+const {Navigator, Screen} = createStackNavigator();
 
 export function SplashRoutes() {
-
-    return (
-        <Navigator initialRouteName="Goal">
-            <Screen 
-                name="Splash"
-                component={SplashScreen}
-            />
-            <Screen
-                name="Goal"
-                component={GoalScreen}
-            />
-            <Screen
-                name="Flex"
-                component={FlexScreen}
-            />
-        </Navigator>
-    )
+  const {user} = useAuth();
+  return (
+    <Navigator initialRouteName="Home">
+      <Screen
+        name="Home"
+        component={user.id ? AppTabRoutes : AuthRoutes}
+        options={{headerShown: false}}
+      />
+    </Navigator>
+  );
 }
