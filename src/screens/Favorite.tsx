@@ -1,14 +1,14 @@
 import React from 'react';
 import {View, Text, StyleSheet, ToastAndroid, Pressable} from 'react-native';
 
-const Home = () => {
+const Faborite = () => {
   const showToast = () => {
     ToastAndroid.show('Toast message!', ToastAndroid.SHORT);
   };
   return (
     <View style={{...styles.container}}>
       <Pressable style={styles.firstChild} onPress={showToast}>
-        <Text style={styles.text}>Home</Text>
+        <Text style={styles.text}>Faborite</Text>
       </Pressable>
     </View>
   );
@@ -39,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Faborite;

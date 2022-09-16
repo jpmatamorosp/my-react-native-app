@@ -8,7 +8,7 @@ const {Navigator, Screen} = createStackNavigator();
 
 export function AppStackRoutes() {
   return (
-    <Navigator initialRouteName="AppHome">
+    <Navigator screenOptions={{headerShown: false}} initialRouteName="AppHome">
       <Screen name="AppHome" component={Home} />
       <Screen name="Flex" component={Flex} />
     </Navigator>

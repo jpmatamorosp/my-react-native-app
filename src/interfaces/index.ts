@@ -1,28 +1,14 @@
-import { StyleProp, TextInputProps, TextStyle } from "react-native";
 
-export interface HeaderItem {
-    id: string,
-    text: string;
-}
+import OrderItem from './OrderItem';
+import OrderEntry from './OrderEntry';
+import IconProps from './IconProps';
+import InputProps from './InputProps';
+import InputTextProps from './InputTextProps';
 
-export interface OrderEntry {
-    id: string;
-    desc: string;
-    price: number;
-    count: number;
-}
-
-export interface InputProps extends TextInputProps {
-    iconName: string,
-    value?: string;
-}
-
-export interface InputTextProps extends TextInputProps {
-    // style?: Pick<TextInputProps , 'style'>,
-    style?: StyleProp<TextStyle>,
-    isFocused: boolean;
-}
-
-export interface IconProps {
-    isFocused: boolean;
-}
+export type {
+    OrderItem,
+    OrderEntry,
+    IconProps,
+    InputProps,
+    InputTextProps,
+};

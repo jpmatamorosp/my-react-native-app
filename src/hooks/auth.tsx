@@ -52,8 +52,6 @@ function AuthProvider({children}: AuthProviderProps) {
         userPassword: '1a',
       });
 
-      console.log({data});
-
       if (data.message === 'Invalid username or password') {
         setIsLogging(false);
 
@@ -66,6 +64,8 @@ function AuthProvider({children}: AuthProviderProps) {
       setIsLogging(false);
 
       const {token} = data;
+
+      console.log({token});
 
       const user: User = {
         id: '1',
@@ -98,7 +98,7 @@ function AuthProvider({children}: AuthProviderProps) {
         else return Alert.alert('Authentication error', 'Unable to login!');
       });
     } catch (error) {
-      console.error({error});
+      console.error({loginError: error});
       return Alert.alert('Error', 'Unable to login!');
     }
   }

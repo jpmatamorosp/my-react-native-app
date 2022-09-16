@@ -1,21 +1,12 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  useWindowDimensions,
-  ToastAndroid,
-  Pressable,
-} from 'react-native';
+import {View, Text, StyleSheet, ToastAndroid, Pressable} from 'react-native';
 
-//const windowsHeight = Dimensions.get('window').height;
 const Flex = () => {
   const showToast = () => {
     ToastAndroid.show('Toast message!', ToastAndroid.SHORT);
   };
-  const {height, width} = useWindowDimensions();
   return (
-    <View style={{...styles.container, height}}>
+    <View style={{...styles.container}}>
       <Pressable style={styles.firstChild} onPress={showToast}>
         <Text style={styles.text}>1</Text>
       </Pressable>
@@ -36,8 +27,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    //width: '10%',
-    height: '100%',
+    flex: 1,
   },
   firstChild: {
     flex: 1,

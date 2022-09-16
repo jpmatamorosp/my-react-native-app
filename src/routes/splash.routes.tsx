@@ -10,9 +10,9 @@ const {Navigator, Screen} = createStackNavigator();
 export function SplashRoutes() {
   const {user} = useAuth();
   return (
-    <Navigator initialRouteName="Home">
+    <Navigator initialRouteName="Main">
       <Screen
-        name="Home"
+        name="Main"
         component={user.id ? AppTabRoutes : AuthRoutes}
         options={{headerShown: false}}
       />
